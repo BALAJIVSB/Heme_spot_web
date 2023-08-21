@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>heme-spot</title>
+  <style>
+    body {
+      background-image: url('https://media.istockphoto.com/id/637422184/photo/red-blood-cells-in-vein.jpg?s=612x612&w=0&k=20&c=OOrghUkfQcgTWsknTcP2BHWPHNYQWExMgMMTOdkCuo4=');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 1820px;
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    form {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+   #blog-section {
+      margin-bottom: 20px;
+    }
+
+    #creators-section {
+      background-color: #f3d7d5;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+     #intro {
+      background-color: #f3d7d5;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      margin-bottom:20px;
+    }
+    
+     #message {
+         background-color: #FFCCCB;
+      
+      padding: 10px;
+      margin-top: 10px; 
+    }
+    
+    .linkedin-logo {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2RYeN56EvozwyyxYGDw4dTu-pbUZyNxnF93zSLUcOlQ&s'); /* Replace with the path to your LinkedIn logo */
+      background-size: cover;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      
+    }
+      input[type="text"] {
+      width: 300px; /* Adjust the width as needed */
+      height: 30px; /* Adjust the height as needed */
+    }
+  </style>
+  <script>
+    function validateForm() {
+    var output = "";
+
+    var gender = document.getElementById("Gender").value
+
+    var rbcCount = document.getElementById("RBC").value;
+    var wbcCount = document.getElementById("WBC").value;
+    var hgbLevel = document.getElementById("HGB").value;
+    var hctLevel = document.getElementById("HCT").value;
+    var creatinine = document.getElementById("CT").value;
+    var uricAcidLevel = document.getElementById("UAL").value;
+    var cholesterol = document.getElementById("Cholestrol").value;
+    var ldlLevel = document.getElementById("LDL").value;
+    var hdlLevel = document.getElementById("HDL").value;
+    var triglycerides = document.getElementById("Triglycerides").value;
+    var plateletsCount = document.getElementById("Platelets").value;
+    var t3Level = document.getElementById("T3").value;
+    var t4Level = document.getElementById("T4").value;
+
+    if (gender == 'm') {
+
+        output += "For men: <br>"
+
+        if (rbcCount != 0) {
+            if (rbcCount < 4.7) {
+              output += "Dark green leafy vegetables<br>";
+            } else if (rbcCount > 6.1) {
+              output += "Avoiding diuretics (Caffeine)<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+
+
+          if (wbcCount != 0) {
+            if (wbcCount < 3.8) {
+              output += "Egg, chicken<br>";
+              output += "Guava<br>";
+              output += "Nuts & seeds<br>";
+              output += "Lentils<br>";
+            } else if (wbcCount > 11.0) {
+              output += "Grapes, Garlic<br>";
+              output += "Avoid foods rich in fats, sugar & salt<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+          
+
+          if (hgbLevel != 0) {
+            if (hgbLevel < 14) {
+              output += "Red meat, dark leafy green<br>";
+              output += "<br>";
+            } else if (hgbLevel > 18) {
+              output += "<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+          
+          if (hctLevel != 0) {
+            if (hctLevel < 39.0) {
+              output += "Red meat, eggs, spinach<br>";
+              output += "Give up Caffeine<br>";
+            } else if (hctLevel > 54.0) {
+              output += "Eat more bran<br>";
+              output += "Avoid iron supplements, Alcohol<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+
+
+          if (creatinine != 0) {
+            if (creatinine < 0.7) {
+              output += "Consume Meat, milk<br>";
+            } else if (creatinine > 1.3) {
+              output += "Eat less red meat and fewer fish products<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+          
+
+          if (uricAcidLevel != 0) {
+            if (uricAcidLevel < 3.5) {
+              output += "Seafood, red meat<br>";
+            } else if (uricAcidLevel > 7.7) {
+              output += "Apples, French bean juice<br>";
+              output += "Avoid alcohol, sugary fruits, beverages<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+          
+
+          if (cholesterol != 0) {
+            if (cholesterol < 110) {
+              output += "Processed foods such as biscuits<br>";
+            } else if (cholesterol > 130) {
+              output += "Consume Oats, whole grains<br>";
+              output += "Avoid oil items<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+
+          if (ldlLevel != 0) {
+            if (ldlLevel < 130) {
+              output += "Consume Oat meal, oat bran<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+
+
+          if (hdlLevel != 0) {
+            if (hdlLevel < 30) {
+              output += "Consume oats, beans<br>";
+            } else if (hdlLevel > 75) {
+              output += "Consume barley<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+          
+          if (triglycerides != 0) {
+            if (triglycerides < 40) {
+              output += "Consume sugary cereals<br>";
+            } else if (triglycerides > 170) {
+              output += "Consume cold water fish<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+          
+
+          if (plateletsCount != 0) {
+            if (plateletsCount < 150000) {
+              output += "Consume milk, green leafy vegetables<br>";
+            } else if (plateletsCount > 450000) {
+              output += "Consume dark chocolates & wine<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+          
+          if (t3Level != 0) {
+            if (t3Level < 60) {
+              output += "Consume baked fish, dairy & fresh eggs<br>";
+            } else if (t3Level > 180) {
+              output += "Non-iodized salt, fresh fruits & oats<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+          
+
+          if (t4Level != 0) {
+            if (t4Level < 0.6) {
+              output += "Consume Baked fish, dairy & fresh eggs<br>";
+            } else if (t4Level > 1.8) {
+              output += "Consume cruciferous vegetables<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+    }
+
+    else if (gender == 'f') {
+        output += "For women: <br>"
+
+        if (rbcCount != 0) {
+            if (rbcCount < 4.2) {
+              output += "Dark green leafy vegetables<br>";
+            } else if (rbcCount > 5.4) {
+              output += "Avoiding diuretics (Caffeine)<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+          
+          if (wbcCount != 0) {
+            if (wbcCount < 3.8) {
+              output += "Egg, chicken<br>";
+              output += "Guava<br>";
+              output += "Nuts & seeds<br>";
+              output += "Lentils, Dried beans<br>";
+            } else if (wbcCount > 11.0) {
+              output += "Lentils<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+
+          if (hgbLevel != 0) {
+            if (hgbLevel < 11) {
+              output += "Red meat, dark leafy green<br>";
+            } else if (hgbLevel > 16) {
+              output += "Consume meats, eggs<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+          
+          if (hctLevel != 0) {
+            if (hctLevel < 34.0) {
+              output += "Red meat, eggs, spinach<br>";
+              output += "Give up caffeine<br>";
+            } else if (hctLevel > 47.0) {
+              output += "Eat more bran<br>";
+              output += "Avoid iron supplements, alcohol<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+          
+          if (creatinine != 0) {
+            if (creatinine < 0.6) {
+              output += "Consume Meat, milk<br>";
+            } else if (creatinine > 1.0) {
+              output += "Eat less red meat and fewer fish products<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+          
+          if (uricAcidLevel != 0) {
+            if (uricAcidLevel < 2.5) {
+              output += "Seafood, red meat<br>";
+            } else if (uricAcidLevel > 6.6) {
+              output += "Apples, French bean juice<br>";
+              output += "Avoid alcohol, sugary fruits, beverages<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+
+
+          if (cholesterol != 0) {
+            if (cholesterol < 110) {
+              output += "Processed foods such as biscuits<br>";
+            } else if (cholesterol > 130) {
+              output += "Consume Oats, whole grains<br>";
+              output += "Avoid oil items<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+          
+          if (ldlLevel != 0) {
+            if (ldlLevel > 130) {
+              output += "Consume Oat meal, oat bran<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+          
+
+          if (hdlLevel != 0) {
+            if (hdlLevel < 30) {
+              output += "Consume oats, beans<br>";
+            } else if (hdlLevel > 75) {
+              output += "Consume barley<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+          
+          if (triglycerides != 0) {
+            if (triglycerides < 35) {
+              output += "Consume sugary cereals<br>";
+            } else if (triglycerides > 135) {
+              output += "Consume cold water fish<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+
+          if (plateletsCount != 0) {
+            if (plateletsCount < 150000) {
+              output += "Consume milk, green leafy vegetables<br>";
+            } else if (plateletsCount > 450000) {
+              output += "Consume dark chocolates & wine<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+          
+          if (t3Level != 0) {
+            if (t3Level < 60) {
+              output += "Consume baked fish, dairy & fresh eggs<br>";
+            } else if (t3Level > 180) {
+              output += "Non-iodized salt, fresh fruits & oats<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+
+          if (t4Level != 0) {
+            if (t4Level < 0.9) {
+              output += "Consume Baked fish, dairy & fresh eggs<br>";
+            } else if (t4Level > 2.3) {
+              output += "Consume cruciferous vegetables<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+    }
+
+    else if (gender == 'c') {
+        if (rbcCount != 0) {
+            if (rbcCount < 4.1) {
+              output += "Dark green leafy vegetables<br>";
+            } else if (rbcCount > 5.5) {
+              output += "Avoiding diuretics (Caffeine)<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+          
+          if (wbcCount != 0) {
+            if (wbcCount < 5.0) {
+              output += "Egg, chicken<br>";
+              output += "Guava<br>";
+              output += "Nuts & seeds<br>";
+              output += "Lentils, Dried beans<br>";
+            } else if (wbcCount > 10.0) {
+              output += "Lentils<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+
+
+          if (hgb != 0) {
+            if (hgb < 10.0) {
+              output += "Red meat, dark leafy green<br>";
+            } else if (hgb > 14.0) {
+              output += "Consume meats, eggs<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+          
+          if (hct != 0) {
+            if (hct < 30.0) {
+              output += "Red meat, eggs, spinach<br>";
+              output += "Give up Caffeine<br>";
+            } else if (hct > 42.0) {
+              output += "Eat more bran<br>";
+              output += "Avoid iron supplements, Alcohol<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+          
+          if (crt != 0) {
+            if (crt < 0.44) {
+              output += "Consume Meat, milk<br>";
+            } else if (crt > 0.65) {
+              output += "Eat less red meat and fewer fish products<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+          
+          if (ual != 0) {
+            if (ual < 2.5) {
+              output += "Seafood, red meat<br>";
+            } else if (ual > 5.5) {
+              output += "Apples, French bean juice<br>";
+              output += "Avoid alcohol, sugary fruits, beverages<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+          
+          if (tgd != 0) {
+            if (tgd < 150.0) {
+              output += "Consume sugary cereals<br>";
+            } else {
+              output += "Consume cold water fish<br>";
+            }
+          }
+          
+          if (bpc != 0) {
+            if (bpc < 150000) {
+              output += "Consume milk, green leafy vegetables<br>";
+            } else if (bpc > 450000) {
+              output += "Consume dark chocolates & wine<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+
+          if (t3 != 0) {
+            if (t3 < 60.0) {
+              output += "Consume baked fish, dairy & fresh eggs<br>";
+            } else if (t3 > 180.0) {
+              output += "Non-iodized salt, fresh fruits & oats<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+          
+          if (t4 != 0) {
+            if (t4 < 5.0) {
+              output += "Consume baked fish, dairy & fresh eggs<br>";
+            } else if (t4 > 12.0) {
+              output += "Consume cruciferous vegetables<br>";
+            } else {
+              output += "<br>";
+            }
+          }
+    }
+
+    else {
+        alert("Invalid Gender");
+    }
+
+    document.getElementById("message").innerHTML = "<p>" + output + "</p>";
+    return false; // Prevent form submission
+}
+
+  </script>
+</head>
+<body>
+    <div id="intro">
+        <h2 style="text-align: center;">HEME-SPOT</h2>
+        <p>HEME-SPOT checks whether the given parameters of the body are
+         in specific range or not. It would also explain the meaning of that component and how essential it
+          is for the body. If a component present in the body inadequate, it recommends the food that
+        would increase the secretion of that components thereby helping the body to perform in a right
+        state.
+        </p>
+    </div>
+   <form onsubmit="return validateForm()">
+    <label for="Gender">Gender(m/f/c):</label>
+    <input type="text" id="Gender" name="Gender"><br><br>
+    
+    <label for="RBC count">RBC count:</label>
+    <input type="text" id="RBC" name="RBC count"><br><br>
+    
+    <label for="WBC count">WBC count:</label>
+    <input type="text" id="WBC" name="WBC count"><br><br>
+    
+    <label for="Haemoglobin Level(HGB)">Haemoglobin Level(HGB):</label>
+    <input type="text" id="HGB" name="Haemoglobin Level(HGB)"><br><br>
+    
+    <label for="Hematrocrit(HCT)">Hematrocrit(HCT):</label>
+    <input type="text" id="HCT" name="Hematrocrit(HCT)"><br><br>
+    
+    <label for="Creatinine">Creatinine:</label>
+    <input type="text" id="CT" name="Creatinine"><br><br>
+    
+  <label for="Uric Acid Level(Serum Urate)">Uric Acid Level(Serum Urate):</label>
+    <input type="text" id="UAL" name="Uric Acid Level(Serum Urate)"><br><br>
+    
+  <label for="Cholestrol">Cholestrol:</label>
+    <input type="text" id="Cholestrol" name="Cholestrol"><br><br>
+    
+ <label for="Low-density Lipoprotein(LDL)">Low-density Lipoprotein(LDL):</label>
+    <input type="text" id="LDL" name="Low-density Lipoprotein(LDL)"><br><br>
+    
+ <label for="High-density Lipoprotein(HDL)">High-density Lipoprotein(HDL):</label>
+    <input type="text" id="HDL" name="High-density Lipoprotein(HDL)"><br><br>
+
+  <label for="Lipid Profile(Triglycerides)">Lipid Profile(Triglycerides):</label>
+    <input type="text" id="Triglycerides" name="Lipid Profile(Triglycerides)"><br><br>
+    
+  <label for="Blood Platelets Count">Blood Platelets Count:</label>
+    <input type="text" id="Platelets" name="Blood Platelets Count"><br><br>
+    
+   <label for="Triiodothyronine(T3)">Triiodothyronine(T3):</label>
+    <input type="text" id="T3" name="Triiodothyronine(T3)"><br><br>
+    
+    
+      <label for="Thyroxine(T4)">Thyroxine(T4):</label>
+    <input type="text" id="T4" name="Thyroxine(T4)"><br><br>
+    
+    
+    <input type="submit" value="Submit">
+  </form>
+  
+  
+  
+  
+ <div id="message">
+     <h2> REPORT </h2>
+   
+ </div>
+ 
+ 
+ 
+    <div id="creators-section">
+      <h2>About the Creators</h2>
+      <p>
+        We are a team of passionate individuals dedicated to creating and sharing content related to heme-spot. Our goal is to provide valuable information and insights in the field of hematology and related topics. We strive to deliver accurate and up-to-date content to our readers.
+      </p>
+      <a href="https://www.linkedin.com/in/balaji-v-s-916287226/" target="_blank">Balaji VS
+      <div class="linkedin-logo"></div>
+    </a>
+    <a href="https://www.linkedin.com/in/anirudh-ganapathy-p-s-707207251/" target="_blank">Anirudh Ganapathy PS
+      <div class="linkedin-logo"></div>
+    </a>
+  </div>
+
+  
+ 
+
+
+</body>
+</html>
+
+
+
